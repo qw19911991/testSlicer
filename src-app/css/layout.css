@@ -1,0 +1,176 @@
+/**
+ * WebSlicer
+ * Copyright (C) 2016 Marcio Teixeira
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+body {
+    position:           absolute;
+    top:                0;
+    left:               0;
+    right:              0;
+    bottom:             0;
+    margin:             0;
+    overflow:           hidden;
+}
+
+body.ready {
+    visibility:         visible;
+    opacity:            1;
+    transition:         visibility 0.3s linear,opacity 0.3s linear;
+}
+
+body.debug {
+    outline:            5px solid green;
+    outline-offset:     -5px;
+}
+
+canvas {
+    width:              100%;
+    height:             100%;
+}
+
+body.debug canvas {
+    outline:            5px dashed orange;
+    outline-offset:     -5px;
+}
+
+hr {
+    height:             1px;
+    border-width:       0;
+}
+
+.settings-panel summary {
+    margin-top:         3px;
+}
+
+/* The follow set of rules control items that are exclusive to the desktop or webapp */
+
+BODY[data-platform="webapp"]  .desktop-only {display: none;}
+BODY[data-platform="desktop"] .webapp-only  {display: none;}
+
+/* The following group of rules manage the children of the radio buttons on the "Print and Preview" page */
+
+.settings-ui:not([data-output="print-to-usb"])                                    .print-to-usb    {display:    none;}
+.settings-ui:not([data-output="save-to-file"])                                    .save-to-file    {display:    none;}
+.settings-ui:not([data-output="save-to-wifi"])                                    .save-to-wifi    {display:    none;}
+.settings-ui:not([data-output="print-to-wifi"])                                   .print-to-wifi   {display:    none;}
+.settings-ui:not([data-output="print-to-wifi"]):not([data-output="save-to-wifi"]) .printer_choices {visibility: hidden;}
+.settings-ui:not([data-output="save-to-file"]):not([data-output="save-to-wifi"])  .gcode_filename  {visibility: hidden;}
+BODY[data-platform="desktop"] .settings-ui:not([data-output="save-to-wifi"])      .gcode_filename  {visibility: hidden;}
+
+/* The following group of rules manage the children of the radio buttons on the "Select Profiles" page */
+
+.settings-ui:not([data-profile-source="from-profiles"])   .load-profiles {display: none;}
+.settings-ui:not([data-profile-source="from-session"])    .keep-settings {display: none;}
+.settings-ui:not([data-profile-source="from-import"])     .import-settings {display: none;}
+
+#material_notes:empty:after {
+    content: "No special instructions for this material";
+}
+
+#material_notes {
+    min-height: 3em;
+}
+
+#machine_start_gcode, #machine_end_gcode {
+    width:              75vw;
+    height:             75vh;
+}
+
+#about {
+    padding:            2em;
+    padding-top:        0;
+    padding-left:       14em;
+    overflow:           auto;
+    display:            flex;
+    flex-direction:     column;
+}
+
+#about.hidden {
+    display:            none;
+}
+
+#about p {
+    margin:             0.5em 0;
+}
+
+#about img {
+    width:              10em;
+    position:           absolute;
+    left:               2em;
+    top:                2em;
+}
+
+#about table {
+    display:            table;
+    margin-top:         0.5em;
+    margin-bottom:      0.5em;
+    margin-left:        1em;
+    border-spacing:     1em 2px;
+}
+
+#openSource {
+    min-height:         3em;
+    overflow:           hidden auto;
+}
+
+#about p:last-child {
+    margin-bottom:      0;
+}
+
+#help-viewport {
+    margin-left:        auto;
+    margin-right:       auto;
+}
+
+#profile_sources_warn, #profile_sources {
+    width:              50vw;
+}
+
+.warning {
+    padding:            1em;
+    text-align:         center;
+    display:            none;
+}
+
+.close-box::after {
+    content:            "\002716";
+    position:           absolute;
+    top:                1vw;
+    right:              1.5vw;
+}
+
+/* Trick to keep iframe responsive from https://benmarshall.me/responsive-iframes */
+
+.iframe-container {
+    overflow:           hidden;
+    padding-top:        56.25%;
+    position:           relative;
+}
+
+.iframe-container  iframe {
+    position:           absolute;
+    background:         white;
+    height:             100%;
+    width:              100%;
+    left:               0;
+    top:                0;
+}
+
+.filename {
+    width:              auto;
+    flex-grow:          1;
+}
+

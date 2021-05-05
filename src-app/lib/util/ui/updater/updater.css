@@ -1,0 +1,57 @@
+/**
+ * WebSlicer
+ * Copyright (C) 2020  SynDaver Labs, Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+#update-app-dialog {
+    min-width:          50%;
+    padding:            1em;
+}
+
+#update-app-dialog:not([data-state]), #update-app-dialog .available, #update-app-dialog .downloading,
+#update-app-dialog .ready, #update-app-dialog .okay {
+    display:            none;
+}
+
+#update-app-dialog[data-state="show"] .header {
+    visibility:         hidden;
+}
+
+#update-app-dialog[data-state="available"] .available {
+    display:            block;
+}
+
+#update-app-dialog[data-state="downloading"] .downloading {
+    display:            block;
+}
+
+#update-app-dialog[data-state="ready"] .ready {
+    display:            block;
+}
+
+#update-app-dialog[data-state="show"] .okay {
+    display:            block;
+}
+
+#update-app-dialog img {
+    width:              1em;
+}
+
+#update-app-dialog span {
+    display:            flex;
+    align-items:        baseline;
+    justify-content:    space-between;
+}

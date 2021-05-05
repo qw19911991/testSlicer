@@ -1,0 +1,1 @@
+If files need to be pre-loaded in the Emscripten file system, they may be placed here.

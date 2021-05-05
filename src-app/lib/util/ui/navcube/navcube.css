@@ -1,0 +1,89 @@
+/**
+ * WebSlicer
+ * Copyright (C) 2016 Marcio Teixeira
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+#navCubeContainer {
+    position:                absolute;
+    top:                     1em;
+    left:                    1em;
+}
+
+#navCube {
+    width:                   60px;
+    height:                  60px;
+    transform-style:         preserve-3d;
+    -moz-transform-style:    preserve-3d;
+    -webkit-transform-style: preserve-3d;
+
+    font-size:               14px;
+    font-weight:             bold;
+    text-align:              center;
+    line-height:             60px;
+
+    cursor:                  help;
+}
+
+#navCube .animate {
+    -webkit-transition:      all 0.5s ease-in-out;
+    transition:              all 0.5s ease-in-out;
+}
+
+#navCube > div {
+    position:                absolute;
+    width:                   60px;
+    height:                  60px;
+
+    overflow:                hidden;
+    opacity:                 0.75;
+    user-select:             none;
+}
+
+#navCube > #top {
+    transform:               rotatex(90deg) translateX(0px) translateY(0px) translateZ(30px);
+    -moz-transform:          rotatex(90deg) translateX(0px) translateY(0px) translateZ(30px);
+    -webkit-transform:       rotatex(90deg) translateX(0px) translateY(0px) translateZ(30px);
+}
+
+#navCube > #left {
+    transform:               rotateY(-90deg) translateX(0px) translateY(0px) translateZ(30px);
+    -moz-transform:          rotateY(-90deg) translateX(0px) translateY(0px) translateZ(30px);
+    -webkit-transform:       rotateY(-90deg) translateX(0px) translateY(0px) translateZ(30px);
+}
+
+#navCube > #front {
+    transform:               translateX(0px) translateY(0px) translateZ(30px);
+    -moz-transform:          translateX(0px) translateY(0px) translateZ(30px);
+    -webkit-transform:       translateX(0px) translateY(0px) translateZ(30px);
+}
+
+#navCube > #right {
+    transform:               rotateY(90deg) translateX(0px) translateY(0px) translateZ(30px);
+    -moz-transform:          rotateY(90deg) translateX(0px) translateY(0px) translateZ(30px);
+    -webkit-transform:       rotateY(90deg) translateX(0px) translateY(0px) translateZ(30px);
+}
+
+#navCube > #back {
+    transform:               rotateY(180deg) translateX(0px) translateY(0px) translateZ(30px);
+    -moz-transform:          rotateY(180deg) translateX(0px) translateY(0px) translateZ(30px);
+    -webkit-transform:       rotateY(180deg) translateX(0px) translateY(0px) translateZ(30px);
+}
+
+#navCube > #bottom {
+    transform:               rotateX(-90deg) translateX(0px) translateY(0px) translateZ(30px);
+    -moz-transform:          rotateX(-90deg) translateX(0px) translateY(0px) translateZ(30px);
+    -webkit-transform:       rotateX(-90deg) translateX(0px) translateY(0px) translateZ(30px);
+}

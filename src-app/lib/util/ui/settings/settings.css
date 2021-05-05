@@ -1,0 +1,221 @@
+/**
+ * WebSlicer
+ * Copyright (C) 2016 Marcio Teixeira
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+.settings-ui {
+    padding:            10px;
+    box-sizing:         border-box; /* Don't add padding to height */
+
+    min-width:          200px;
+    max-height:         calc(100% - 2em);
+
+    display:            flex;
+    flex-direction:     column;
+}
+
+body.debug .setting-ui {
+    outline:            5px solid cyan;
+    outline-offset:     -5px;
+}
+
+.settings-panel {
+    user-select:        none;
+    
+    flex-basis:         auto;
+    flex-grow:          1;
+    flex-shrink:        1;
+    overflow:           auto;
+}
+
+.settings-panel.footer {
+    flex-basis:         auto;
+    flex-grow:          0;
+    flex-shrink:        0;
+}
+
+.settings-panel .parameter {
+    display:            flex;
+    justify-content:    space-between;
+    margin-top:         0.3em;
+    margin-bottom:      0.3em;
+    margin-right:       0.3em;
+}
+
+.settings-panel h1 {
+    font-size:          13px;
+    font-weight:        bold;
+    cursor:             default;
+}
+
+.settings-panel th {
+}
+
+.settings-panel td {
+    text-align:         center;
+}
+
+.settings-panel details {
+    margin-top:         0.25em;
+    margin-bottom:      0.5em;
+}
+
+.settings-panel summary {
+    margin-bottom:      0.5em;
+}
+
+.settings-panel summary > h1 {
+    display:            inline;
+}
+
+.settings-panel label {
+    font-size:          11px;
+    margin-right:       1em;
+}
+
+.settings-panel label[title] {
+    cursor:             help;
+}
+
+.settings-panel select {
+    box-sizing:         border-box;
+    min-width:          12em;
+    font-size:          11px;
+    border:             1px solid;
+    cursor:             pointer;
+}
+
+.settings-panel .button-group, .settings-panel .incomplete-button-group {
+    display:            flex;
+    align-items:        center;
+}
+
+.settings-panel button {
+    margin:             5px 1em 5px 5px;
+}
+
+.settings-panel .button-label {
+    vertical-align:     middle;
+    width:              0px;
+    min-width:          250px;
+    flex-grow:          1;
+    font-size:          13px;
+}
+
+.settings-panel input[type=text],
+.settings-panel input[type=number],
+.settings-panel editable-select {
+    box-sizing:         border-box;
+    padding:            1px 2px;
+    width:              12em;
+    font-size:          11px;
+    border:             1px solid;
+}
+
+.settings-panel input[type=text].readonly,
+.settings-panel input[type=number].readonly,
+.settings-panel editable-select.readonly {
+    pointer-events:     none;
+    border:             none;
+}
+
+.settings-panel progress {
+    box-sizing:         border-box;
+    width:              12em;    
+}
+
+.settings-panel .has_units input[type=text],
+.settings-panel .has_units input[type=number] {
+    padding:            1px 3em 1px 2px; /* Allow 3em for units */
+}
+
+button {
+    cursor:             pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance:   none;
+  margin:               0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.has_units {
+    position:           relative;
+}
+
+.has_units span {
+    position:           absolute;
+    right:              3px;
+    font-size:          11px;
+}
+
+.settings-panel input[type=submit] {
+    vertical-align:     middle;
+}
+
+.settings-panel input[type="checkbox"] {
+    margin:             0;
+}
+
+.settings-panel .drop-area {
+    position:           relative;
+    margin-top:         10px;
+    padding:            10px;
+    text-align:         center;
+    height:             3em;
+    vertical-align:     middle;
+    border:             3px dotted;
+    cursor:             pointer;
+}
+
+.settings-panel .drop-area > div {
+    position:           relative;
+    top:                50%; 
+    transform:          translateY(-50%);
+    -webkit-transform:  translateY(-50%);
+    font-size:          1.5em;
+    font-family:        'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+    font-weight:        bold;
+}
+
+.settings-panel .drop-box.full .drop-area {
+    display:            none;
+}
+
+.settings-panel .drop-box.full > input[type=file] {
+    display:            none;
+}
+
+.settings-panel .drop-box.empty .selected-file {
+    display:            none;
+}
+
+.settings-panel .selected-file {
+    padding:            2px;
+    cursor:             pointer;
+    
+    display:            flex;
+    justify-content:    space-between;
+    align-items:        center;
+}
+
+.settings-panel .selected-file .reset {
+    font-size:          120%;
+}
